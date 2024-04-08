@@ -31,10 +31,10 @@ a.
     <header>
 
         <ul id="paginasBarra">
-            <li> <a href="html/designer.html">Desingner</a> </li>
-            <li> <a href="html/plotter.html">Plotter</a> </li>
-            <li> <a href="html/laser.html">Laser</a> </li>
-            <li> <a href="html/finalizadas.html">Finalizadas</a></li>
+            <li class="paginasBarra"> <a href="html/designer.html">Desingner</a> </li>
+            <li class="paginasBarra"> <a href="html/plotter.html">Plotter</a> </li>
+            <li class="paginasBarra"> <a href="html/laser.html">Laser</a> </li>
+            <li class="paginasBarra"> <a href="html/finalizadas.html">Finalizadas</a></li>
         </ul>
 
     </header>
@@ -43,21 +43,26 @@ a.
         <section id="criarOS">
             <img id="imagemLogoCriar" src="E:\Users\A10\Documents\wetransfer-330b80\LogoFotoImagem.png" alt="Logo da Imagem">
             
-            <textarea id="textOS" name="textOS" cols="30" rows="10"></textarea>
+            <textarea id="textOS" name="textOS" cols="1" rows="1"></textarea>
 
+            <div id="areaCodigoOSCriar">
+                <label for="designer">Codigo:</label><br>
+                <textarea id="codigoCriarOS" name="codigoCriarOS" cols="1" rows="1"></textarea>
+            </div>
+            
             <div id="botoesRadio">
-                <input class="radios" type="checkbox" id="radioDesigner" value="designer">
-                <label for="designer">Designer</label><br>
-                <input class="radios" type="checkbox" id="radioPlotter" value="plotter">
-                <label for="plotter">Plotter</label><br>
-                <input class="radios" type="checkbox" id="radioLaser" value="laser">
-                <label for="laser">Laser</label>
+            <input class="radios" type="checkbox" id="radioDesigner" value="designer">
+            <label for="designer">Designer</label><br>
+            <input class="radios" type="checkbox" id="radioPlotter" value="plotter">
+            <label for="plotter">Plotter</label><br>
+            <input class="radios" type="checkbox" id="radioLaser" value="laser">
+            <label for="laser">Laser</label>
             </div>
 
             <button id="botaoCriar">Criar OS</button>
         </section>
     </main>
-
+<script src="script.js"></script>
 
 </body>
 </html>
