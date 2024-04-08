@@ -65,6 +65,14 @@ main{
     justify-items: center;
 
 }
+#botoesRadio{
+    display: flex;
+    margin-top: 1%;
+}
+.radios{
+    margin-left: 10px;
+    
+}
 #botaoCriar{
     width: 10vw;
     height: 3vh;
