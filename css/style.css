@@ -63,6 +63,7 @@ main{
     text-align: center;
     margin-top: 2%;
     font-size: xx-large;
+    justify-items: center;
 
 }
 #botaoCriar{
@@ -71,4 +72,10 @@ main{
     background-color: greenyellow;
     margin-top: 1%;
     border-radius: 10px;
+    cursor:pointer;
+    
+}
+#botaoCriar:hover{
+    
+    border: inset ;
 }
