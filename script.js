@@ -34,22 +34,27 @@ botaoCriar.addEventListener('click', function() {
             vaiParaPlotter = true;
         }
 
-        switch (codigoCriarOS.value){
+        switch (parseInt(codigoCriarOS.value)){
             case 1001:
                 console.log("O vendedor gerou uma nova OS");
                 abriu = "vendedor";
+                break;
             case 1002:
                 console.log("O Gerente gerou uma nova OS");
                 abriu = "gerente";
+                break;
             case 1003:
                 console.log("O Desinger gerou uma nova OS");
                 abriu = "designer";
+                break;
             case 1004:
                 console.log("O Plotter gerou uma nova OS");
                 abriu = "plotter";
+                break;
             case 1005:
                 console.log("O Laser gerou uma nova OS");
                 abriu = "laser";
+                break;
         }
 
         function GravaArquivo(arq, texto) {
