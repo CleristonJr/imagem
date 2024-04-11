@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OS IMAGEM</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <!--
@@ -36,17 +36,25 @@ a.
             <li class="paginasBarra"> <a href="html/laser.html">Laser</a> </li>
             <li class="paginasBarra"> <a href="html/finalizadas.html">Finalizadas</a></li>
         </ul>
+        
 
     </header>
     <main>
-        <section id="listasServicosSetores"></section>
+        <section id="listasServicosSetores">
+            <h1>Designer</h1>
+            <ol id="listaDesigner"></ol>
+            <h2>Plotter</h2>
+            <ol id="listaPlotter"></ol>
+            <h3>Laser</h3>
+            <ol id="listaLaser"></ol>
+        </section>
         <section id="criarOS">
             <img id="imagemLogoCriar" src="E:\Users\A10\Documents\wetransfer-330b80\LogoFotoImagem.png" alt="Logo da Imagem">
             
             <textarea id="textOS" name="textOS" cols="1" rows="1"></textarea>
 
             <div id="areaCodigoOSCriar">
-                <label for="designer">Codigo:</label><br>
+                <label>Codigo:</label><br>
                 <textarea id="codigoCriarOS" name="codigoCriarOS" cols="1" rows="1"></textarea>
             </div>
             
@@ -59,10 +67,64 @@ a.
             <label for="laser">Laser</label>
             </div>
 
+            <div id="areaComentariosOSCriar">
+                <label>Comentários:</label><br>
+                <textarea id="codigoCriarOS" name="codigoCriarOS" cols="1" rows="1"></textarea>
+            </div>
+
             <button id="botaoCriar">Criar OS</button>
         </section>
     </main>
-<script src="script.js"></script>
+<script src="./script.js"></script>
+<script>
+    function listFilesDesigner(){
+        fetch('/list-files-Designer')
+            .then(response => response.json())
+            .then(files => {
+                const fileList = document.getElementById('listaDesigner');
+                fileList.innerHTML = '';
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    const fileName = file.split('.').slice(0, -1).join('.'); // Remove a extensão do arquivo
+                    listItem.textContent = fileName;
+                    fileList.appendChild(listItem);
+                });
+            })
+    }
+    function listFilesPlotter(){
+        fetch('/list-files-Plotter')
+            .then(response => response.json())
+            .then(files => {
+                const fileList = document.getElementById('listaPlotter');
+                fileList.innerHTML = '';
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    const fileName = file.split('.').slice(0, -1).join('.'); // Remove a extensão do arquivo
+                    listItem.textContent = fileName;
+                    fileList.appendChild(listItem);
+                    
+                });
+            })
+    }
+    function listFilesLaser(){
+        fetch('/list-files-Laser')
+            .then(response => response.json())
+            .then(files => {
+                const fileList = document.getElementById('listaLaser');
+                fileList.innerHTML = '';
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    const fileName = file.split('.').slice(0, -1).join('.'); // Remove a extensão do arquivo
+                    listItem.textContent = fileName;
+                    fileList.appendChild(listItem);
+                    
+                });
+            })
+    }
+    listFilesDesigner();
+    listFilesPlotter()
+    listFilesLaser()
+</script>
 
 </body>
 </html>
